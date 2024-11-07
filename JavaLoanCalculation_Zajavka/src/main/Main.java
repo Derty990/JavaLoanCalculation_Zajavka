@@ -1,22 +1,33 @@
 package main;
 
 import model.InputData;
-import service.PrintingService;
-import service.PrintingServiceImpl;
+import model.MortgageResidual;
+import service.*;
 
 import java.math.BigDecimal;
 
 public class Main {
 
 
-
     public static void main(String[] args) {
         InputData inputData = new InputData()
-                .withAmount(new BigDecimal("298000"))
-                .withMonthsDuration(BigDecimal.valueOf(160));
+                .withAmount(new BigDecimal("298000"));
+
 
         PrintingService printingService = new PrintingServiceImpl();
-        printingService.printInputDataInfo(inputData);
+        RateCalculationService rateCalculationService = new RateCalculationServiceImpl(
+                new TimePointServiceImpl(),
+                new AmountsCalculationServiceImpl(),
+                new ResidualCalculationServiceImpl()
 
+        );
+
+        MortgageCalculationService mortgageCalculationService = new MortgageCalculationServiceImpl(
+                printingService,
+                rateCalculationService
+        );
+        mortgageCalculationService.calculate(inputData);
     }
+
+
 }

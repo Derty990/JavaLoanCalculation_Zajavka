@@ -2,7 +2,7 @@ package service;
 
 import model.RateAmounts;
 
-public class AmountsCalculationServieImpl implements AmountsCalculationService {
+public class AmountsCalculationServiceImpl implements AmountsCalculationService {
 
     @Override
     public RateAmounts calculate() {

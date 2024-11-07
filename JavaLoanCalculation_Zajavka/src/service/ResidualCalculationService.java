@@ -1,2 +1,7 @@
-package service;public interface ResidualCalculationService {
+package service;
+
+import model.MortgageResidual;
+
+public interface ResidualCalculationService {
+    MortgageResidual calculate();
 }

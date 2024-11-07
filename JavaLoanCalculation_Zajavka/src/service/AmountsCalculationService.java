@@ -2,6 +2,6 @@ package service;
 
 import model.RateAmounts;
 
-public interface AmountsCalculationServie {
+public interface AmountsCalculationService {
     RateAmounts calculate();
 }

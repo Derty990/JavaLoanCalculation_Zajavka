@@ -1,7 +1,11 @@
 package service;
 
+import model.InputData;
 import model.TimePoint;
 
-public interface TimePoointService {
-    TimePoint calculate();
+import java.math.BigDecimal;
+
+public interface TimePointService {
+
+    TimePoint calculate(BigDecimal rateNumber, InputData inputData);
 }
