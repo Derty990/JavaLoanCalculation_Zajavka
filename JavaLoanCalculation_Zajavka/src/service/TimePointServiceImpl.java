@@ -18,6 +18,7 @@ public class TimePointServiceImpl implements TimePointService {
         BigDecimal year = calculateYear(rateNumber);
         BigDecimal month = calculateMonth(rateNumber);
         return new TimePoint(date, year, month);
+
     }
 
     private static LocalDate calculateDate(BigDecimal rateNumber, InputData inputData) {
