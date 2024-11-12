@@ -48,13 +48,6 @@ public class InputData {
         return this;
     }
 
-
-
-
-
-
-
-
     public LocalDate getRepaymentStartDate() {
         return repaymentStartDate;
     }
@@ -72,7 +65,7 @@ public class InputData {
     }
 
     public BigDecimal getInterestPercent(){
-        return wiborPercent.add(bankMarginPercent).divide(PERCENT, 10, RoundingMode.HALF_UP);
+        return wiborPercent.add(bankMarginPercent).divide(PERCENT, 4, RoundingMode.HALF_UP);
     }
 
     public BigDecimal getInterestDisplay(){
