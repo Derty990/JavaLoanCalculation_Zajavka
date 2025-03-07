@@ -2,7 +2,7 @@ package service;
 
 public class MortgageException extends RuntimeException{
 
-    public MortgageException() {
-        super("Case not handled");
+    public MortgageException(final String message) {
+        super(message);
     }
 }

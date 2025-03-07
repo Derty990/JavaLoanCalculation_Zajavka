@@ -13,47 +13,39 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
     private final DecreasingAmountsCalculationService decreasingAmountsCalculationService;
 
     public AmountsCalculationServiceImpl(
-            ConstantAmountsCalculationService constantAmountsCalculationService,
-            DecreasingAmountsCalculationService decreasingAmountsCalculationService
+            final ConstantAmountsCalculationService constantAmountsCalculationService,
+            final DecreasingAmountsCalculationService decreasingAmountsCalculationService
     ) {
         this.constantAmountsCalculationService = constantAmountsCalculationService;
         this.decreasingAmountsCalculationService = decreasingAmountsCalculationService;
     }
 
     @Override
-    public RateAmounts calculate(InputData inputData, Overpayment overpayment) {
+    public RateAmounts calculate(final InputData inputData, final Overpayment overpayment) {
         switch (inputData.getRateType()) {
-            case CONSTANT -> {
+            case CONSTANT:
                 return constantAmountsCalculationService.calculate(inputData, overpayment);
-            }
-
-            case DECREASING -> {
+            case DECREASING:
                 return decreasingAmountsCalculationService.calculate(inputData, overpayment);
-            }
-
-            default -> throw new MortgageException();
+            default:
+                throw new MortgageException("Case not handled");
         }
     }
 
     @Override
-    public RateAmounts calculate(InputData inputData, Overpayment overpayment, Rate previousRate) {
+    public RateAmounts calculate(final InputData inputData, final Overpayment overpayment, final Rate previousRate) {
         switch (inputData.getRateType()) {
-            case CONSTANT -> {
+            case CONSTANT:
                 return constantAmountsCalculationService.calculate(inputData, overpayment, previousRate);
-            }
-
-            case DECREASING -> {
+            case DECREASING:
                 return decreasingAmountsCalculationService.calculate(inputData, overpayment, previousRate);
-            }
-
-            default -> throw new MortgageException();
+            default:
+                throw new MortgageException("Case not handled");
         }
     }
+
+
 }
-
-
-
-
 
 
 

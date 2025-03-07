@@ -8,33 +8,31 @@ import java.util.List;
 
 public class MortgageCalculationServiceImpl implements MortgageCalculationService {
 
-    private final PrintingService printingService;
-
     private final RateCalculationService rateCalculationService;
+
+    private final PrintingService printingService;
 
     private final SummaryService summaryService;
 
     public MortgageCalculationServiceImpl(
-            PrintingService printingService,
-            RateCalculationService rateCalculationService,
-            SummaryService summaryService) {
-
-        this.printingService = printingService;
+            final RateCalculationService rateCalculationService,
+            final PrintingService printingService,
+            final SummaryService summaryService
+    ) {
         this.rateCalculationService = rateCalculationService;
+        this.printingService = printingService;
         this.summaryService = summaryService;
     }
 
-
     @Override
     public void calculate(InputData inputData) {
-        printingService.printInputDataInfo(inputData);
+        printingService.printIntroInformation(inputData);
 
         List<Rate> rates = rateCalculationService.calculate(inputData);
+        Summary summary = summaryService.calculateSummary(rates);
 
-        Summary summary = summaryService.calculate(rates);
         printingService.printSummary(summary);
-
-        printingService.printRates(rates);
+        printingService.printSchedule(rates, inputData);
     }
 
 }

@@ -3,22 +3,18 @@ package model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public final class TimePoint {
-
-    private final LocalDate date;
+public class TimePoint {
 
     private final BigDecimal year;
 
     private final BigDecimal month;
 
-    public TimePoint(LocalDate date, BigDecimal year, BigDecimal month) {
-        this.date = date;
+    private final LocalDate date;
+
+    public TimePoint(final BigDecimal year, final BigDecimal month, final LocalDate date) {
         this.year = year;
         this.month = month;
-    }
-
-    public LocalDate getDate() {
-        return date;
+        this.date = date;
     }
 
     public BigDecimal getYear() {
@@ -29,5 +25,7 @@ public final class TimePoint {
         return month;
     }
 
-
+    public LocalDate getDate() {
+        return date;
+    }
 }

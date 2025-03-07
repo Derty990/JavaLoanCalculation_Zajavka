@@ -1,6 +1,6 @@
 package model;
 
-public enum RateType {
+public enum MortgageType {
 
     CONSTANT,
     DECREASING

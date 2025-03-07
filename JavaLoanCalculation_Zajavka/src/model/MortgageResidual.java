@@ -5,21 +5,20 @@ import java.math.RoundingMode;
 
 public class MortgageResidual {
 
-    private final BigDecimal amount;
+    private final BigDecimal residualAmount;
 
-    private final BigDecimal duration;
+    private final BigDecimal residualDuration;
 
-    public MortgageResidual(BigDecimal amount, BigDecimal duration) {
-        this.amount = amount;
-        this.duration = duration;
+    public MortgageResidual(final BigDecimal residualAmount, final BigDecimal residualDuration) {
+        this.residualAmount = residualAmount;
+        this.residualDuration = residualDuration;
     }
 
-    public BigDecimal getAmount() {
-        return amount.setScale(2, RoundingMode.HALF_UP);
+    public BigDecimal getResidualAmount() {
+        return residualAmount;
     }
 
-    public BigDecimal getDuration() {
-        return duration;
+    public BigDecimal getResidualDuration() {
+        return residualDuration;
     }
-
 }
