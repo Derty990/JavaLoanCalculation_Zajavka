@@ -12,6 +12,9 @@ import java.time.temporal.ChronoUnit;
 public class TimePointCalculationServiceImpl implements TimePointCalculationService {
 
     public TimePoint calculate(final BigDecimal rateNumber, final InputData inputData) {
+        if(!BigDecimal.ONE.equals(rateNumber)){
+            throw new RuntimeException("This method only accepts rateNumber equal to ONE");
+        }
         BigDecimal year = calculateYear(rateNumber);
         BigDecimal month = calculateMonth(rateNumber);
         LocalDate date = inputData.getRepaymentStartDate();

@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm'
+    id 'jacoco'
 }
 
 group = 'org.example'
@@ -11,17 +12,85 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.12'
 
     compileOnly 'org.projectlombok:lombok:1.18.36'
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
 
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.12.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.12.0'
+    testImplementation 'org.junit.platform:junit-platform-launcher:1.12.0'
+
+    testRuntimeOnly 'org.junit.platform:junit-platform-engine:1.12.0'
+
     testCompileOnly 'org.projectlombok:lombok:1.18.36'
+
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
 
     implementation 'ch.qos.logback:logback-classic:1.4.12'
     implementation 'org.slf4j:slf4j-api:2.0.9'
 
 }
+
+test {
+    useJUnitPlatform()
+
+    testLogging{
+        events "skipped", "failed"
+    }
+
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports{
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtmlCustom')
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.50
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
