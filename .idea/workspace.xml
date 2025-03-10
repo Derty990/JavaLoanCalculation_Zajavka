@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ac8239c-6f10-4013-a00e-d2bb3082b53f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/mortgage/services/TimePointCalculationServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/logback-test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/model/Rate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/model/TimePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/model/TimePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/services/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/services/Function.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/services/TimePointCalculationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/services/TimePointCalculationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mortgage/services/TimePointCalculationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mortgage/services/TimePointCalculationServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="F:\Zajavka\Warsztaty\MortgageCalculatorProject\Project\htmlReport" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -100,8 +96,8 @@
     "Gradle.Project [:mortgage.MortgageCalculator.main()].executor": "Debug",
     "Gradle.Project [build].executor": "Run",
     "Gradle.TimePointCalculationServiceImplTest.calculate.executor": "Debug",
-    "Gradle.TimePointCalculationServiceImplTest.calculateTimePointForOtherRates.executor": "Run",
-    "Gradle.TimePointCalculationServiceImplTest.executor": "Run",
+    "Gradle.TimePointCalculationServiceImplTest.calculateTimePointForOtherRates.executor": "Coverage",
+    "Gradle.TimePointCalculationServiceImplTest.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -136,7 +132,7 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TimePointCalculationServiceImplTest.calculateTimePointForOtherRates">
+  <component name="RunManager" selected="Gradle.TimePointCalculationServiceImplTest">
     <configuration name="MortgageCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mortgage.MortgageCalculator" />
       <module name="Project.main" />
@@ -246,8 +242,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TimePointCalculationServiceImplTest.calculateTimePointForOtherRates" />
         <item itemvalue="Gradle.TimePointCalculationServiceImplTest" />
+        <item itemvalue="Gradle.TimePointCalculationServiceImplTest.calculateTimePointForOtherRates" />
         <item itemvalue="Gradle.TimePointCalculationServiceImplTest.calculate" />
         <item itemvalue="Gradle.Project [build]" />
         <item itemvalue="Application.MortgageCalculator" />
@@ -279,15 +275,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mortgage/services/TimePointCalculationServiceImpl.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project$TimePointCalculationServiceImplTest.ic" NAME="TimePointCalculationServiceImplTest Coverage Results" MODIFIED="1741630015735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Project$TimePointCalculationServiceImplTest_calculateTimePointForOtherRates.ic" NAME="TimePointCalculationServiceImplTest.calculateTimePointForOtherRates Coverage Results" MODIFIED="1741629837927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
