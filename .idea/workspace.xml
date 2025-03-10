@@ -5,52 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ac8239c-6f10-4013-a00e-d2bb3082b53f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/JavaLoanCalculation_Zajavka.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/MortgageCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/InputData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/MortgageReference.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/MortgageResidual.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/MortgageType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/Overpayment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/Rate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/RateAmounts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/Summary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/model/TimePoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/AmountsCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/AmountsCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/ConstantAmountsCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/ConstantAmountsCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/DecreasingAmountsCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/DecreasingAmountsCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/Function.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/MortgageCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/MortgageCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/MortgageException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/OverpaymentCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/OverpaymentCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/PrintingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/PrintingServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/RateCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/RateCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/ReferenceCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/ReferenceCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/ResidualCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/ResidualCalculationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/SummaryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/SummaryServiceFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/TimePointCalculationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaLoanCalculation_Zajavka/src/service/TimePointCalculationServiceImpl.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/MortgageCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/MortgageCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/services/AmountsCalculationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/services/AmountsCalculationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/services/ConstantAmountsCalculationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/services/ConstantAmountsCalculationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/services/DecreasingAmountsCalculationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/services/DecreasingAmountsCalculationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/services/MortgageCalculationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/services/MortgageCalculationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/services/PrintingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/services/PrintingServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -113,6 +86,7 @@
   "keyToString": {
     "Application.MortgageCalculator.executor": "Run",
     "Gradle.Build Project.executor": "Run",
+    "Gradle.Project [:mortgage.MortgageCalculator.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -133,22 +107,10 @@
       <recent name="F:\Zajavka\Warsztaty\MortgageCalculatorProject\mortgage\out\production\mortgage" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MortgageCalculator">
-    <configuration name="MortgageCalculator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="mortgage.MortgageCalculator" />
-      <module name="mortgage" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mortgage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="MortgageCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mortgage.MortgageCalculator" />
+      <module name="Project.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="mortgage.*" />
@@ -162,7 +124,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MortgageCalculator" />
-        <item itemvalue="Application.MortgageCalculator (1)" />
       </list>
     </recent_temporary>
   </component>

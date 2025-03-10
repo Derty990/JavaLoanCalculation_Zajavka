@@ -1,6 +1,7 @@
 package mortgage.services;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import mortgage.model.*;
 
 import java.math.BigDecimal;
@@ -8,6 +9,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 public class RateCalculationServiceImpl implements RateCalculationService {
 
@@ -32,6 +34,7 @@ public class RateCalculationServiceImpl implements RateCalculationService {
             Rate nextRate = calculateNextRate(i, inputData, previousRate);
             previousRate = nextRate;
             rateList.add(nextRate);
+            log.trace("Calculating next rate: [{}]", nextRate);
 
             if (BigDecimal.ZERO.equals(nextRate.getMortgageResidual().getResidualAmount().setScale(0, RoundingMode.HALF_UP))) {
                 break;
