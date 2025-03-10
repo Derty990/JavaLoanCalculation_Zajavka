@@ -29,8 +29,8 @@ class TimePointCalculationServiceImplTest {
     @DisplayName("Should calculate first rate time point successfully")
     void calculateTimePointForFirstRate() {
         //given
-        InputData inputData = someInputData();
-        TimePoint expected = someTimePoint();
+        InputData inputData = TestData.someInputData();
+        TimePoint expected = TestData.someTimePoint();
 
         //when
         TimePoint result = timePointCalculationService.calculate(BigDecimal.valueOf(1), inputData);
@@ -45,12 +45,12 @@ class TimePointCalculationServiceImplTest {
     @DisplayName("Should calculate other rate time point than first successfully")
     void calculateTimePointForOtherRates(LocalDate expectedDate, BigDecimal rateNumber, BigDecimal year, BigDecimal month, LocalDate date) {
         //given
-        TimePoint timePoint = someTimePoint()
+        TimePoint timePoint = TestData.someTimePoint()
                 .withYear(year)
                 .withMonth(month)
                 .withDate(date);
 
-        Rate rate = someRate()
+        Rate rate = TestData.someRate()
                 .withTimePoint(timePoint);
 
         TimePoint expected = timePoint.withDate(expectedDate);
@@ -61,12 +61,6 @@ class TimePointCalculationServiceImplTest {
 
         //then
         Assertions.assertEquals(expected, result);
-    }
-
-    private static Rate someRate() {
-        return Rate.builder()
-                .timePoint(someTimePoint())
-                .build();
     }
 
     public static Stream<Arguments> testMortgageData() {
@@ -92,32 +86,7 @@ class TimePointCalculationServiceImplTest {
         );
     }
 
-    public static InputData someInputData() {
-        return InputData.builder()
-                .repaymentStartDate(LocalDate.of(2010, 5, 10))
-                .wiborPercent(BigDecimal.valueOf(2.70))
-                .amount(BigDecimal.valueOf(198267.46))
-                .monthsDuration(BigDecimal.valueOf(180))
-                .rateType(MortgageType.CONSTANT)
-                .marginPercent(BigDecimal.valueOf(1.8))
-                .overpaymentProvisionPercent(BigDecimal.valueOf(3))
-                .overpaymentProvisionMonths(BigDecimal.valueOf(36))
-                .overpaymentStartMonth(BigDecimal.valueOf(1))
-                .overpaymentReduceWay(Overpayment.REDUCE_PERIOD)
-                .mortgagePrintPayoffsSchedule(true)
-                .mortgageRateNumberToPrint(1)
-                .build();
 
-    }
-
-    private static TimePoint someTimePoint() {
-        return TimePoint
-                .builder()
-                .year(BigDecimal.valueOf(1))
-                .month(BigDecimal.valueOf(1))
-                .date(LocalDate.of(2010, 5, 10))
-                .build();
-    }
 
 
 }

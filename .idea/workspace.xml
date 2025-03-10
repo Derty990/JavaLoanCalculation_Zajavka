@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ac8239c-6f10-4013-a00e-d2bb3082b53f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/mortgage/services/TestData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/model/MortgageReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/model/MortgageReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/model/MortgageResidual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/model/MortgageResidual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mortgage/model/RateAmounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mortgage/model/RateAmounts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mortgage/services/ConstantAmountsCalculationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mortgage/services/ConstantAmountsCalculationServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/mortgage/services/TimePointCalculationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mortgage/services/TimePointCalculationServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/logback-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/logback-test.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +63,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -93,6 +100,9 @@
   "keyToString": {
     "Application.MortgageCalculator.executor": "Run",
     "Gradle.Build Project.executor": "Run",
+    "Gradle.ConstantAmountsCalculationServiceImplTest.calculate.executor": "Run",
+    "Gradle.ConstantAmountsCalculationServiceImplTest.shouldCalculateOtherRateAmountCorrectly.executor": "Run",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
     "Gradle.Project [:mortgage.MortgageCalculator.main()].executor": "Debug",
     "Gradle.Project [build].executor": "Run",
     "Gradle.TimePointCalculationServiceImplTest.calculate.executor": "Debug",
@@ -112,7 +122,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "build.tools",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -132,26 +142,85 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TimePointCalculationServiceImplTest">
-    <configuration name="MortgageCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="mortgage.MortgageCalculator" />
-      <module name="Project.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mortgage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.ConstantAmountsCalculationServiceImplTest">
+    <configuration name="ConstantAmountsCalculationServiceImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;mortgage.services.ConstantAmountsCalculationServiceImplTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConstantAmountsCalculationServiceImplTest.calculate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;mortgage.services.ConstantAmountsCalculationServiceImplTest.calculate&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConstantAmountsCalculationServiceImplTest.shouldCalculateOtherRateAmountCorrectly" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;mortgage.services.ConstantAmountsCalculationServiceImplTest.shouldCalculateOtherRateAmountCorrectly&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="Project [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -168,7 +237,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TimePointCalculationServiceImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests in 'Project.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -180,56 +249,6 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;mortgage.services.TimePointCalculationServiceImplTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TimePointCalculationServiceImplTest.calculate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;mortgage.services.TimePointCalculationServiceImplTest.calculate&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TimePointCalculationServiceImplTest.calculateTimePointForOtherRates" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;mortgage.services.TimePointCalculationServiceImplTest.calculateTimePointForOtherRates&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -242,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TimePointCalculationServiceImplTest" />
-        <item itemvalue="Gradle.TimePointCalculationServiceImplTest.calculateTimePointForOtherRates" />
-        <item itemvalue="Gradle.TimePointCalculationServiceImplTest.calculate" />
+        <item itemvalue="Gradle.ConstantAmountsCalculationServiceImplTest" />
+        <item itemvalue="Gradle.Tests in 'Project.test'" />
         <item itemvalue="Gradle.Project [build]" />
-        <item itemvalue="Application.MortgageCalculator" />
+        <item itemvalue="Gradle.ConstantAmountsCalculationServiceImplTest.shouldCalculateOtherRateAmountCorrectly" />
+        <item itemvalue="Gradle.ConstantAmountsCalculationServiceImplTest.calculate" />
       </list>
     </recent_temporary>
   </component>
