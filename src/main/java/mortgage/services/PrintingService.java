@@ -20,7 +20,7 @@ public interface PrintingService {
             "%-8s %10s " +
             "%-8s %10s ";
 
-    StringBuilder SEPARATOR = createSeparator('-', 180);
+    String SEPARATOR = createSeparator('-', 180);
 
     String INTEREST_SUM = "SUMA ODSETEK: ";
     String OVERPAYMENT_PROVISION = "PROWIZJA ZA NADPLATY: ";
@@ -52,10 +52,10 @@ public interface PrintingService {
     String PERCENT = "% ";
 
     @SuppressWarnings("SameParameterValue")
-    private static StringBuilder createSeparator(char sign, int length) {
-        StringBuilder sep = new StringBuilder();
-        sep.append(String.valueOf(sign).repeat(Math.max(0, length)));
-        return sep;
+    private static String createSeparator(char sign, int length) {
+
+        return String.valueOf(sign).repeat(Math.max(0, length));
+
     }
 
     void printIntroInformation(InputData inputData);

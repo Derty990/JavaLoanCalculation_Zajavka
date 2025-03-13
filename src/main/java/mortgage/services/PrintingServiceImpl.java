@@ -29,10 +29,10 @@ public class PrintingServiceImpl implements PrintingService {
         msg.append(OVERPAYMENT_START_MONTH).append(inputData.getOverpaymentStartMonth()).append(BLANK).append(MONTH);
 
         Optional.of(inputData.getOverpaymentSchema())
-            .filter(schema -> schema.size() > 0)
+            .filter(schema -> !schema.isEmpty())
             .ifPresent(schema -> logOverpayment(msg, inputData.getOverpaymentSchema(), inputData.getOverpaymentReduceWay()));
 
-        logMessage(msg);
+        log(msg.toString());
     }
 
     private void logOverpayment(final StringBuilder msg, final Map<Integer, BigDecimal> schema, final String reduceWay) {
@@ -73,7 +73,7 @@ public class PrintingServiceImpl implements PrintingService {
         int index = 1;
         for (Rate rate : rates) {
             if (rate.getRateNumber().remainder(BigDecimal.valueOf(inputData.getMortgageRateNumberToPrint())).equals(BigDecimal.ZERO)) {
-                String logMessage = String.format(SCHEDULE_TABLE_FORMAT,
+                String message = String.format(SCHEDULE_TABLE_FORMAT,
                     RATE_NUMBER, rate.getRateNumber(),
                     YEAR, rate.getTimePoint().getYear(),
                     MONTH, rate.getTimePoint().getMonth(),
@@ -85,41 +85,32 @@ public class PrintingServiceImpl implements PrintingService {
                     LEFT_AMOUNT, rate.getMortgageResidual().getResidualAmount(),
                     LEFT_MONTHS, rate.getMortgageResidual().getResidualDuration()
                 );
-                logMessage(logMessage);
+                log(message);
                 if (index % AmountsCalculationService.YEAR.intValue() == 0) {
-                    logSeparator(SEPARATOR);
+                    log(SEPARATOR);
                 }
                 index++;
             }
         }
-        logMessage(NEW_LINE);
+        log(NEW_LINE);
     }
 
     @Override
     public void printSummary(final Summary summary) {
-        StringBuilder msg = new StringBuilder();
-        msg.append(INTEREST_SUM).append(summary.getInterestSum()).append(CURRENCY);
-        msg.append(NEW_LINE);
-        msg.append(OVERPAYMENT_PROVISION).append(summary.getOverpaymentProvisionSum().setScale(2, RoundingMode.HALF_UP)).append(CURRENCY);
-        msg.append(NEW_LINE);
-        msg.append(LOSTS_SUM).append(summary.getTotalLostSum().setScale(2, RoundingMode.HALF_UP)).append(CURRENCY);
-        msg.append(NEW_LINE);
-        msg.append(CAPITAL_SUM).append(summary.getTotalCapital().setScale(2, RoundingMode.HALF_UP)).append(CURRENCY);
-        msg.append(NEW_LINE);
+        String msg = INTEREST_SUM + summary.getInterestSum() + CURRENCY +
+                NEW_LINE +
+                OVERPAYMENT_PROVISION + summary.getOverpaymentProvisionSum().setScale(2, RoundingMode.HALF_UP) + CURRENCY +
+                NEW_LINE +
+                LOSTS_SUM + summary.getTotalLostSum().setScale(2, RoundingMode.HALF_UP) + CURRENCY +
+                NEW_LINE +
+                CAPITAL_SUM + summary.getTotalCapital().setScale(2, RoundingMode.HALF_UP) + CURRENCY +
+                NEW_LINE;
 
-        logMessage(msg);
+        log(msg);
     }
 
     @SuppressWarnings("SameParameterValue")
-    private void logSeparator(StringBuilder sep) {
-        logMessage(sep);
-    }
-
-    private void logMessage(StringBuilder message) {
-        logMessage(message.toString());
-    }
-
-    private void logMessage(String message) {
+    private void log(String message) {
         //log.info(message);
         System.out.println(message);
     }

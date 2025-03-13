@@ -9,6 +9,6 @@ public interface ResidualCalculationService {
 
     MortgageResidual calculate(RateAmounts rateAmounts, InputData inputData);
 
-    MortgageResidual calculate(RateAmounts rateAmounts, final InputData inputData, Rate previousRate);
+    MortgageResidual calculate(RateAmounts rateAmounts, InputData inputData, Rate previousRate);
 
 }

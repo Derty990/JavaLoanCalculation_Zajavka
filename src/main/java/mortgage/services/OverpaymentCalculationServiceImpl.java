@@ -17,12 +17,17 @@ public class OverpaymentCalculationServiceImpl implements OverpaymentCalculation
     }
 
     private Optional<BigDecimal> calculateOverpaymentAmount(final BigDecimal rateNumber, Map<Integer, BigDecimal> overpaymentSchema) {
-        for (Map.Entry<Integer, BigDecimal> entry : overpaymentSchema.entrySet()) {
+        /*for (Map.Entry<Integer, BigDecimal> entry : overpaymentSchema.entrySet()) {
             if (BigDecimal.valueOf(entry.getKey()).equals(rateNumber)) {
                 return Optional.of(entry.getValue());
             }
         }
-        return Optional.empty();
+        return Optional.empty();*/
+
+        return overpaymentSchema.entrySet().stream()
+                .filter(entry -> BigDecimal.valueOf(entry.getKey()).equals(rateNumber))
+                .findFirst()
+                .map(Map.Entry::getValue);
     }
 
     private BigDecimal calculateOverpaymentProvision(final BigDecimal rateNumber, final BigDecimal overpaymentAmount, final InputData inputData) {

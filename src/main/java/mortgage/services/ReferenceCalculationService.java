@@ -9,6 +9,6 @@ public interface ReferenceCalculationService {
 
     MortgageReference calculate(RateAmounts rateAmounts, InputData inputData);
 
-    MortgageReference calculate(RateAmounts rateAmounts, final InputData inputData, Rate previousRate);
+    MortgageReference calculate(RateAmounts rateAmounts, InputData inputData, Rate previousRate);
 
 }

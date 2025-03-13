@@ -24,12 +24,9 @@ public class SummaryServiceFactory {
     }
 
     private static BigDecimal calculate(final List<Rate> rates, Function function) {
-        BigDecimal sum = BigDecimal.ZERO;
+        return rates.stream()
+                .reduce(BigDecimal.ZERO, (previous, next) -> previous.add(function.calculate(next)), BigDecimal::add);
 
-        for (Rate rate : rates) {
-            sum = sum.add(function.calculate(rate));
-        }
-        return sum;
     }
 
 }
