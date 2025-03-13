@@ -24,7 +24,7 @@ public class MortgageCalculationServiceImpl implements MortgageCalculationServic
         printingService.printIntroInformation(inputData);
 
         List<Rate> rates = rateCalculationService.calculate(inputData);
-        rates.forEach(element -> log.debug("Rate: [{}]", element));
+       //rates.forEach(element -> log.debug("Rate: [{}]", element));
         Summary summary = summaryService.calculateSummary(rates);
 
         printingService.printSummary(summary);

@@ -37,7 +37,7 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
             case DECREASING:
                 return decreasingAmountsCalculationService.calculate(inputData, overpayment, previousRate);
             default:
-                log.error("Case not handled: [{}]",inputData.getRateType());
+                //log.error("Case not handled: [{}]",inputData.getRateType());
                 throw new MortgageException("Case not handled");
         }
     }

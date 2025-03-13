@@ -29,7 +29,6 @@ class ConstantAmountsCalculationServiceImplTest {
         //when
         RateAmounts result = constantAmountsCalculationService.calculate(inputData, null);
 
-
         //then
         Assertions.assertEquals(expected, result);
     }
@@ -47,7 +46,6 @@ class ConstantAmountsCalculationServiceImplTest {
 
         //when
         RateAmounts result = constantAmountsCalculationService.calculate(inputData, null, rate);
-
 
         //then
         Assertions.assertEquals(expected, result);

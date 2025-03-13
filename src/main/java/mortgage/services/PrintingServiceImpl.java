@@ -1,5 +1,6 @@
 package mortgage.services;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mortgage.model.InputData;
 import mortgage.model.Overpayment;
@@ -13,6 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Slf4j
+@AllArgsConstructor
 public class PrintingServiceImpl implements PrintingService {
 
     @Override
@@ -118,7 +120,8 @@ public class PrintingServiceImpl implements PrintingService {
     }
 
     private void logMessage(String message) {
-        log.info(message);
+        //log.info(message);
+        System.out.println(message);
     }
 
 }
