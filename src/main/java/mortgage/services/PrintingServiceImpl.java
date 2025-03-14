@@ -6,6 +6,7 @@ import mortgage.model.InputData;
 import mortgage.model.Overpayment;
 import mortgage.model.Rate;
 import mortgage.model.Summary;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -14,6 +15,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Slf4j
+@Service
 @AllArgsConstructor
 public class PrintingServiceImpl implements PrintingService {
 
@@ -29,8 +31,8 @@ public class PrintingServiceImpl implements PrintingService {
         msg.append(OVERPAYMENT_START_MONTH).append(inputData.getOverpaymentStartMonth()).append(BLANK).append(MONTH);
 
         Optional.of(inputData.getOverpaymentSchema())
-            .filter(schema -> !schema.isEmpty())
-            .ifPresent(schema -> logOverpayment(msg, inputData.getOverpaymentSchema(), inputData.getOverpaymentReduceWay()));
+                .filter(schema -> !schema.isEmpty())
+                .ifPresent(schema -> logOverpayment(msg, inputData.getOverpaymentSchema(), inputData.getOverpaymentReduceWay()));
 
         log(msg.toString());
     }
@@ -54,12 +56,12 @@ public class PrintingServiceImpl implements PrintingService {
         StringBuilder schemaMsg = new StringBuilder();
         for (Map.Entry<Integer, BigDecimal> entry : schema.entrySet()) {
             schemaMsg.append(MONTH)
-                .append(entry.getKey())
-                .append(COMMA)
-                .append(AMOUNT)
-                .append(entry.getValue())
-                .append(CURRENCY)
-                .append(NEW_LINE);
+                    .append(entry.getKey())
+                    .append(COMMA)
+                    .append(AMOUNT)
+                    .append(entry.getValue())
+                    .append(CURRENCY)
+                    .append(NEW_LINE);
         }
         return schemaMsg.toString();
     }
@@ -74,16 +76,16 @@ public class PrintingServiceImpl implements PrintingService {
         for (Rate rate : rates) {
             if (rate.getRateNumber().remainder(BigDecimal.valueOf(inputData.getMortgageRateNumberToPrint())).equals(BigDecimal.ZERO)) {
                 String message = String.format(SCHEDULE_TABLE_FORMAT,
-                    RATE_NUMBER, rate.getRateNumber(),
-                    YEAR, rate.getTimePoint().getYear(),
-                    MONTH, rate.getTimePoint().getMonth(),
-                    DATE, rate.getTimePoint().getDate(),
-                    RATE, rate.getRateAmounts().getRateAmount(),
-                    INTEREST, rate.getRateAmounts().getInterestAmount(),
-                    CAPITAL, rate.getRateAmounts().getCapitalAmount(),
-                    OVERPAYMENT, rate.getRateAmounts().getOverpayment().getAmount(),
-                    LEFT_AMOUNT, rate.getMortgageResidual().getResidualAmount(),
-                    LEFT_MONTHS, rate.getMortgageResidual().getResidualDuration()
+                        RATE_NUMBER, rate.getRateNumber(),
+                        YEAR, rate.getTimePoint().getYear(),
+                        MONTH, rate.getTimePoint().getMonth(),
+                        DATE, rate.getTimePoint().getDate(),
+                        RATE, rate.getRateAmounts().getRateAmount(),
+                        INTEREST, rate.getRateAmounts().getInterestAmount(),
+                        CAPITAL, rate.getRateAmounts().getCapitalAmount(),
+                        OVERPAYMENT, rate.getRateAmounts().getOverpayment().getAmount(),
+                        LEFT_AMOUNT, rate.getMortgageResidual().getResidualAmount(),
+                        LEFT_MONTHS, rate.getMortgageResidual().getResidualDuration()
                 );
                 log(message);
                 if (index % AmountsCalculationService.YEAR.intValue() == 0) {

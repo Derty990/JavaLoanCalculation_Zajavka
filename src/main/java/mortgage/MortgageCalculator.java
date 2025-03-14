@@ -1,25 +1,29 @@
 package mortgage;
 
+import mortgage.configuration.CalculatorConfiguration;
 import mortgage.model.InputData;
 import mortgage.model.MortgageType;
 import mortgage.model.Overpayment;
-import mortgage.services.*;
+import mortgage.services.InputDataRepository;
+import mortgage.services.MortgageCalculationService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.math.BigDecimal;
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 
 public class MortgageCalculator {
 
     public static void main(String[] args) {
 
-        InputData inputData;
+        ApplicationContext context = new AnnotationConfigApplicationContext(CalculatorConfiguration.class);
 
-        try {
-            inputData = new InputDataService().read();
-        } catch (Exception e) {
-            System.err.println("Error loading input data, interrupting. Error: " + e.getMessage());
+        InputDataRepository inputDataRepository = context.getBean(InputDataRepository.class);
+
+
+        final var inputData = inputDataRepository.read();
+        if (inputData.isEmpty()) {
             return;
         }
 
@@ -35,17 +39,21 @@ public class MortgageCalculator {
                 )
         );
 
-        InputData updatedInputData = inputData
+        InputData updatedInputData = inputData.get()
                 .withAmount(new BigDecimal("296192.11"))
                 .withMonthsDuration(BigDecimal.valueOf(360))
                 .withOverpaymentReduceWay(Overpayment.REDUCE_RATE)
                 .withRateType(MortgageType.CONSTANT)
                 .withOverpaymentSchema(overpaymentSchema);
 
-        CalculatorCreator.getInstance().calculate(updatedInputData);
+        MortgageCalculationService mortgageCalculationService = context.getBean(MortgageCalculationService.class);
+
+        mortgageCalculationService.calculate(updatedInputData);
 
     }
 
+    /// This is simplified by using spring beans and context
+    /*
     static class CalculatorCreator {
         private static MortgageCalculationService instance;
 
@@ -74,6 +82,6 @@ public class MortgageCalculator {
         }
 
 
-    }
+    }*/
 
 }

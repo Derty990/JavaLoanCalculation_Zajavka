@@ -1,9 +1,11 @@
 package mortgage.services;
 
 import mortgage.model.*;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+@Service
 public class ReferenceCalculationServiceImpl implements ReferenceCalculationService {
 
     @Override
@@ -43,9 +45,9 @@ public class ReferenceCalculationServiceImpl implements ReferenceCalculationServ
 
     private BigDecimal calculateResidualAmount(final BigDecimal residualAmount, final RateAmounts rateAmounts) {
         return residualAmount
-            .subtract(rateAmounts.getCapitalAmount())
-            .subtract(rateAmounts.getOverpayment().getAmount())
-            .max(BigDecimal.ZERO);
+                .subtract(rateAmounts.getCapitalAmount())
+                .subtract(rateAmounts.getOverpayment().getAmount())
+                .max(BigDecimal.ZERO);
     }
 
 }

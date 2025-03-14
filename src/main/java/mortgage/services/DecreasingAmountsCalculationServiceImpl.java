@@ -5,11 +5,13 @@ import mortgage.model.InputData;
 import mortgage.model.Overpayment;
 import mortgage.model.Rate;
 import mortgage.model.RateAmounts;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 @Slf4j
+@Service
 public class DecreasingAmountsCalculationServiceImpl implements DecreasingAmountsCalculationService {
 
     @Override
@@ -24,7 +26,7 @@ public class DecreasingAmountsCalculationServiceImpl implements DecreasingAmount
         BigDecimal interestAmount = AmountsCalculationService.calculateInterestAmount(residualAmount, interestPercent);
         log.info("interestAmount: [{}]", interestAmount);
         BigDecimal capitalAmount = AmountsCalculationService.compareCapitalWithResidual(
-            calculateDecreasingCapitalAmount(residualAmount, residualDuration), residualAmount);
+                calculateDecreasingCapitalAmount(residualAmount, residualDuration), residualAmount);
         log.info("capitalAmount: [{}]", capitalAmount);
         BigDecimal rateAmount = capitalAmount.add(interestAmount);
         log.info("rateAmount: [{}]", rateAmount);
@@ -48,7 +50,7 @@ public class DecreasingAmountsCalculationServiceImpl implements DecreasingAmount
         BigDecimal interestAmount = AmountsCalculationService.calculateInterestAmount(residualAmount, interestPercent);
         log.info("interestAmount: [{}]", interestAmount);
         BigDecimal capitalAmount = AmountsCalculationService.compareCapitalWithResidual(
-            calculateDecreasingCapitalAmount(referenceAmount, referenceDuration), residualAmount);
+                calculateDecreasingCapitalAmount(referenceAmount, referenceDuration), residualAmount);
         log.info("capitalAmount: [{}]", capitalAmount);
         BigDecimal rateAmount = capitalAmount.add(interestAmount);
         log.info("rateAmount: [{}]", rateAmount);

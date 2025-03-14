@@ -3,16 +3,18 @@ package mortgage.services;
 import mortgage.model.InputData;
 import mortgage.model.Rate;
 import mortgage.model.TimePoint;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+@Service
 public class TimePointCalculationServiceImpl implements TimePointCalculationService {
 
     public TimePoint calculate(final BigDecimal rateNumber, final InputData inputData) {
-        if(!BigDecimal.ONE.equals(rateNumber)){
+        if (!BigDecimal.ONE.equals(rateNumber)) {
             throw new RuntimeException("This method only accepts rateNumber equal to ONE");
         }
         BigDecimal year = calculateYear(rateNumber);
@@ -34,8 +36,8 @@ public class TimePointCalculationServiceImpl implements TimePointCalculationServ
 
     private BigDecimal calculateMonth(final BigDecimal rateNumber) {
         return BigDecimal.ZERO.equals(rateNumber.remainder(AmountsCalculationService.YEAR))
-            ? AmountsCalculationService.YEAR
-            : rateNumber.remainder(AmountsCalculationService.YEAR);
+                ? AmountsCalculationService.YEAR
+                : rateNumber.remainder(AmountsCalculationService.YEAR);
     }
 
 }

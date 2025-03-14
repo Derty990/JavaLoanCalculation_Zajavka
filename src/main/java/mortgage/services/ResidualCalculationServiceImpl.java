@@ -4,10 +4,12 @@ import mortgage.model.InputData;
 import mortgage.model.MortgageResidual;
 import mortgage.model.Rate;
 import mortgage.model.RateAmounts;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+@Service
 public class ResidualCalculationServiceImpl implements ResidualCalculationService {
 
     @Override
@@ -36,10 +38,10 @@ public class ResidualCalculationServiceImpl implements ResidualCalculationServic
     }
 
     private BigDecimal calculateResidualDuration(
-        InputData inputData,
-        BigDecimal residualAmount,
-        BigDecimal previousResidualDuration,
-        RateAmounts rateAmounts
+            InputData inputData,
+            BigDecimal residualAmount,
+            BigDecimal previousResidualDuration,
+            RateAmounts rateAmounts
     ) {
         // jak wystąpi nadpłata to zaczynają się schody,
         // trzeba przeliczyć kredyt w zależności od tego czy podczas nadpłaty zmniejszamy czas trwania czy wysokość raty
@@ -86,9 +88,9 @@ public class ResidualCalculationServiceImpl implements ResidualCalculationServic
 
     private BigDecimal calculateResidualAmount(final BigDecimal residualAmount, final RateAmounts rateAmounts) {
         return residualAmount
-            .subtract(rateAmounts.getCapitalAmount())
-            .subtract(rateAmounts.getOverpayment().getAmount())
-            .max(BigDecimal.ZERO);
+                .subtract(rateAmounts.getCapitalAmount())
+                .subtract(rateAmounts.getOverpayment().getAmount())
+                .max(BigDecimal.ZERO);
     }
 
 }

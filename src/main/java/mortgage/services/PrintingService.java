@@ -9,16 +9,16 @@ import java.util.List;
 public interface PrintingService {
 
     String SCHEDULE_TABLE_FORMAT =
-        "%-4s %3s " +
             "%-4s %3s " +
-            "%-7s %3s " +
-            "%-7s %3s " +
-            "%-4s %10s " +
-            "%-7s %10s " +
-            "%-7s %10s " +
-            "%-7s %10s " +
-            "%-8s %10s " +
-            "%-8s %10s ";
+                    "%-4s %3s " +
+                    "%-7s %3s " +
+                    "%-7s %3s " +
+                    "%-4s %10s " +
+                    "%-7s %10s " +
+                    "%-7s %10s " +
+                    "%-7s %10s " +
+                    "%-8s %10s " +
+                    "%-8s %10s ";
 
     String SEPARATOR = createSeparator('-', 180);
 

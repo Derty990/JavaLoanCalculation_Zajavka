@@ -3,6 +3,7 @@ package mortgage.services;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mortgage.model.*;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Service
 @RequiredArgsConstructor
 public class RateCalculationServiceImpl implements RateCalculationService {
 

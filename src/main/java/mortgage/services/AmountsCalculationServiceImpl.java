@@ -6,15 +6,17 @@ import mortgage.model.InputData;
 import mortgage.model.Overpayment;
 import mortgage.model.Rate;
 import mortgage.model.RateAmounts;
+import org.springframework.stereotype.Service;
 
 @Slf4j
+@Service
 @RequiredArgsConstructor
+
 public class AmountsCalculationServiceImpl implements AmountsCalculationService {
 
     private final ConstantAmountsCalculationService constantAmountsCalculationService;
 
     private final DecreasingAmountsCalculationService decreasingAmountsCalculationService;
-
 
     @Override
     public RateAmounts calculate(final InputData inputData, final Overpayment overpayment) {
@@ -24,7 +26,7 @@ public class AmountsCalculationServiceImpl implements AmountsCalculationService 
             case DECREASING:
                 return decreasingAmountsCalculationService.calculate(inputData, overpayment);
             default:
-                log.error("Case not handled: [{}]",inputData.getRateType());
+                //log.error("Case not handled: [{}]",inputData.getRateType());
                 throw new MortgageException("Case not handled");
         }
     }

@@ -1,16 +1,20 @@
 package mortgage.model;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Value;
+import lombok.With;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Map;
 
-import static mortgage.services.PrintingService.PERCENT;
 
-/*
 @With
 @Value
-@Builder*/
+@Builder
+@Getter
 public class InputData {
 
     private static final BigDecimal PERCENT = new BigDecimal("100");
@@ -29,8 +33,26 @@ public class InputData {
     boolean mortgagePrintPayoffsSchedule;
     Integer mortgageRateNumberToPrint;
 
+    public BigDecimal getMarginPercent() {
+        return marginPercent.divide(PERCENT, 4, RoundingMode.HALF_UP);
+    }
 
+    public BigDecimal getOverpaymentProvisionPercent() {
+        return overpaymentProvisionPercent.divide(PERCENT, 4, RoundingMode.HALF_UP);
+    }
 
+    public BigDecimal getInterestPercent() {
+        return getMarginPercent().add(getWiborPercent());
+    }
+
+    public BigDecimal getInterestToDisplay() {
+        return wiborPercent.add(marginPercent);
+    }
+
+    public BigDecimal getWiborPercent() {
+        return wiborPercent.divide(PERCENT, 4, RoundingMode.HALF_UP);
+    }
+/*
     public InputData withRepaymentStartDate(LocalDate repaymentStartDate) {
         this.repaymentStartDate = repaymentStartDate;
         return this;
@@ -154,7 +176,7 @@ public class InputData {
 
     public BigDecimal getInterestToDisplay() {
         return wiborPercent.add(marginPercent);
-    }
+    }*/
 
     /// This is for program version where i've been experimenting with lombok
     /*
